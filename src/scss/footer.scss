@@ -1,0 +1,19 @@
+$main-color: #6874e8;
+$libre: 'Libre Baskerville', serif;
+
+#page-footer {
+  background: $main-color;
+  width: 100%;
+  height: 36px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  p {
+    font-size: 0.8rem;
+    color: white;
+    font-family: $libre;
+  }
+}

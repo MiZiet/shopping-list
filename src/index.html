@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>MDB Webpack Starter</title>
+    <title>Shopping Basket</title>
     <!-- Favicon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
@@ -14,13 +14,33 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet" />
     <!-- Main css file -->
     <link rel="stylesheet" href="css/index.min.css" />
     <!-- Custom styles -->
     <style></style>
   </head>
 
-  <body></body>
+  <body>
+    <header id="page-header">
+      <div class="container-row title-container">
+        <img src="./img//logo_large.png" alt="shopping basket" />
+        <h1>Shopping Basket App</h1>
+      </div>
+      <p class="text-center">make <strong class="main-color">your</strong> shopping smarter</p>
+    </header>
+    <main>
+      <div id="main-container" class="main-container"></div>
+    </main>
+    <footer id="page-footer">
+      <div id="total-cost"><p>Total cost:</p></div>
+      <div id="total-weight"><p>Total weight:</p></div>
+    </footer>
+  </body>
   <!-- Main js file -->
   <script type="text/javascript" src="js/index.min.js"></script>
   <!-- Custom scripts -->

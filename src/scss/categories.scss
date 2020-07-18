@@ -1,0 +1,103 @@
+$main-color: #6874e8;
+$libre: 'Libre Baskerville', serif;
+$arimo: 'Arimo', sans-serif;
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  section {
+    border: 1px solid black;
+    width: 96%;
+    margin: 12px 2%;
+    padding: 0 0 60px 0;
+    position: relative;
+    header {
+      h2 {
+        padding: 6px 0;
+        margin: 0;
+        background: $main-color;
+        color: white;
+        text-align: center;
+        font-family: $arimo;
+      }
+    }
+    ul {
+      padding: 6px;
+      li {
+        display: grid;
+        grid-template-columns: auto 65px 65px 65px 90px;
+        text-align: center;
+        align-items: center;
+      }
+      .item-name {
+        text-align: left;
+        padding-left: 6px;
+      }
+    }
+    footer {
+      border-top: 1px solid black;
+      height: 48px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 45px 45px;
+      text-align: right;
+      align-items: center;
+      p {
+        font-size: 1.2rem;
+        margin: 0;
+        font-family: $arimo;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.delete,
+.edit,
+.del-basket,
+.add-item {
+  font-size: 1.6rem;
+  border: none;
+  padding: 0 6px;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.del-basket,
+.delete {
+  color: red;
+}
+
+.edit {
+  color: #f9c80e;
+}
+
+.add-item {
+  color: green;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .main-container {
+    section {
+      min-width: 300px;
+      width: 44%;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  @media (min-width: 992px) {
+    .main-container {
+      section {
+        width: 30%;
+      }
+    }
+  }
+}

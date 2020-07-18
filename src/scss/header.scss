@@ -1,0 +1,56 @@
+$main-color: #6874e8;
+$libre: 'Libre Baskerville', serif;
+
+#page-header {
+  margin: 2px 0;
+  font-family: $libre;
+  border-bottom: 1px solid black;
+  img {
+    width: 26px;
+    margin: 0 6px 0 0;
+  }
+  h1 {
+    margin: 12px 0;
+    font-size: 0.6rem;
+  }
+  p {
+    display: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+}
+
+.title-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 266px) {
+  #page-header {
+    img {
+      width: 30px;
+      margin: 0 12px 0 0;
+    }
+    h1 {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #page-header {
+    margin: 12px 0;
+    img {
+      width: 40px;
+    }
+    h1 {
+      margin: 6px 0 0 0;
+      font-size: 2rem;
+    }
+    p {
+      display: block;
+    }
+  }
+}

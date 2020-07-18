@@ -1,5 +1,5 @@
-import * as mdb from 'mdb-ui-kit';
+import List from './components/list.js';
 
-export default {
-  mdb,
-};
+const listInstance = new List();
+
+listInstance.render();

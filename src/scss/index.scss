@@ -1,1 +1,34 @@
-@import '~mdb-ui-kit/css/mdb.min.css';
+@import './header.scss';
+@import './footer.scss';
+@import './categories.scss';
+$main-color: #6874e8;
+$libre: 'Libre Baskerville', serif;
+
+body {
+  margin: 0;
+  font-size: 12px;
+}
+
+.container,
+.container-row,
+.container-column {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+}
+.container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.main-color {
+  color: $main-color;
+}
