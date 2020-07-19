@@ -12,10 +12,15 @@ $arimo: 'Arimo', sans-serif;
     padding: 0 0 60px 0;
     position: relative;
     header {
+      display: flex;
+      flex-direction: row;
+      background: $main-color;
+      justify-content: center;
       h2 {
         padding: 6px 0;
         margin: 0;
-        background: $main-color;
+        background: none;
+        border: none;
         color: white;
         text-align: center;
         font-family: $arimo;
@@ -54,8 +59,29 @@ $arimo: 'Arimo', sans-serif;
   }
 }
 
+.add-basket {
+  border: 1px dashed black !important;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 !important;
+  text-align: center;
+  img {
+    padding: 0;
+    margin-bottom: 12px;
+  }
+  input {
+    margin: 12px 0;
+  }
+  input[type='submit'] {
+    cursor: pointer;
+  }
+}
+
 .delete,
-.edit,
+.edit-item,
 .del-basket,
 .add-item {
   font-size: 1.6rem;
@@ -64,7 +90,7 @@ $arimo: 'Arimo', sans-serif;
   background: none;
   cursor: pointer;
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -73,12 +99,22 @@ $arimo: 'Arimo', sans-serif;
   color: red;
 }
 
-.edit {
+.edit-item {
   color: #f9c80e;
 }
 
 .add-item {
   color: green;
+}
+
+.edit-basket-name {
+  font-size: 1.4rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -93,11 +129,17 @@ $arimo: 'Arimo', sans-serif;
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  @media (min-width: 992px) {
-    .main-container {
-      section {
-        width: 30%;
-      }
+  .main-container {
+    section {
+      width: 28%;
+    }
+  }
+}
+
+@media (min-width: 2100px) {
+  .main-container {
+    section {
+      width: 20%;
     }
   }
 }

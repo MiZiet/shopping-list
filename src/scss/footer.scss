@@ -15,5 +15,9 @@ $libre: 'Libre Baskerville', serif;
     font-size: 0.8rem;
     color: white;
     font-family: $libre;
+    strong {
+      padding: 0 8px;
+      font-weight: lighter;
+    }
   }
 }

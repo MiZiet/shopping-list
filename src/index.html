@@ -36,10 +36,53 @@
     <main>
       <div id="main-container" class="main-container"></div>
     </main>
-    <footer id="page-footer">
-      <div id="total-cost"><p>Total cost:</p></div>
-      <div id="total-weight"><p>Total weight:</p></div>
-    </footer>
+    <div id="modal-container" class="modal-hide">
+      <div class="modal-content">
+        <div id="modal-header">
+          <h2 id="modal-title"></h2>
+          <button id="modal-close-btn">&#10006;</button>
+        </div>
+        <div id="modal-body">
+          <form id="modal-form">
+            <label for="product-name">Name</label>
+            <input id="form-product-name" required name="product-name" type="text" />
+            <label for="unit">Units</label>
+            <input id="form-units" required name="unit" type="list" list="units-list" />
+            <datalist id="units-list">
+              <option value="kg"></option>
+              <option value="liter "></option>
+              <option value="piece"></option>
+              <option value="meter"></option>
+            </datalist>
+
+            <label for="price-per-unit">Price / Unit</label>
+            <input
+              id="price-per-unit"
+              required
+              name="price-per-unit"
+              type="number"
+              min="1"
+              step="0.01"
+              value="1"
+            />
+            <label for="form-amount">Amount</label>
+            <input
+              id="form-amount"
+              required
+              name="form-amount"
+              type="number"
+              min="1"
+              step="0.01"
+              value="1"
+            />
+            <input id="form-submit" type="submit" value="Submit" />
+          </form>
+          <p>Price:<strong id="modal-price"></strong></p>
+        </div>
+      </div>
+      <div class="modal-background"></div>
+    </div>
+    <footer id="page-footer"></footer>
   </body>
   <!-- Main js file -->
   <script type="text/javascript" src="js/index.min.js"></script>

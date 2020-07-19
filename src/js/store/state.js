@@ -1,32 +1,10 @@
-export default {
-  items: [
-    {
-      name: 'Groceries',
-      content: [
-        {
-          name: 'Szczypiorek',
-          price: '5',
-          amount: ' 2',
-          unit: 'szt',
-        },
-        {
-          name: 'Ziemniaki',
-          price: '2',
-          amount: ' 1.2',
-          unit: 'kg',
-        },
-      ],
-    },
-    {
-      name: 'Drinks',
-      content: [
-        {
-          name: 'Kolka',
-          price: '8',
-          amount: ' 1',
-          unit: 'szt',
-        },
-      ],
-    },
-  ],
-};
+export default function () {
+  let localState = JSON.parse(window.localStorage.getItem('state'));
+  if (localState !== null && localState !== undefined && localState !== 'undefined') {
+    return localState;
+  } else {
+    return {
+      items: [],
+    };
+  }
+}
