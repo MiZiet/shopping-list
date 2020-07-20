@@ -3,6 +3,8 @@ import store from '../store/index';
 import listeners from '../listeners/listeners';
 import addBasketListener from '../listeners/addBasket';
 
+import ListItem from './listItem';
+
 export default class List extends Component {
   constructor() {
     super({
@@ -10,27 +12,12 @@ export default class List extends Component {
       element: document.querySelector('.main-container'),
     });
     this.listenerAttached = false;
-    this.basketCosts = [];
   }
 
-  calculateBasketsCosts() {
-    this.basketCosts = [];
-    if (store.state.items !== [] && store.state.items !== undefined) {
-      store.state.items.forEach((basket) => {
-        let cost = 0;
-        basket.content.forEach((item) => {
-          cost = cost + Math.round(Number(item.price) * Number(item.amount) * 100) / 100;
-        });
-        this.basketCosts = [...this.basketCosts, Math.round(cost * 1000) / 1000];
-      });
-    }
-  }
   basketListener() {
     addBasketListener();
   }
   render() {
-    this.calculateBasketsCosts();
-
     if (store.state.item && store.state.items.length === 0) {
       this.element.innerHTML = `<section class="add-basket"><img src="../../img/add.png"/></section>`;
       return;
@@ -41,41 +28,7 @@ export default class List extends Component {
           store.state.items
             ? store.state.items
                 .map((item, itemIndex) => {
-                  return `
-            <section id="${item.name.toLowerCase()}" >
-              <header>
-                <h2>
-                ${item.name}</h2>
-              </header>
-              <ul> 
-              <li>
-              <p class="item-name">Name</p> 
-              <p>Amount</p>
-              <p>Price/Unit </p>
-              <p>Total Price</p>
-              <p>Action</p>
-              </li>
-              ${item.content
-                .map((contentItem, contentItemIndex) => {
-                  return `
-                <li>
-                  <p class="item-name">${contentItem.name}</p> 
-                  <p>${contentItem.amount} ${contentItem.unit}</p>
-                  <p> ${contentItem.price} </p>
-                  <p> ${Math.round(contentItem.price * contentItem.amount * 100) / 100} </p>
-                  <span><button id=edit-${itemIndex}-${contentItemIndex} class="edit-item">&#9998;</button><button id=del-${itemIndex}-${contentItemIndex} class="delete">&#10006;</button></span>
-                  </li>
-                `;
-                })
-                .join('')}
-              </ul>
-            <footer> 
-                  <p>${this.basketCosts[itemIndex]} zł</p>
-                  <button id="add-item-${itemIndex}" class="add-item">&#10010;</button>
-                  <button id="del-basket-${itemIndex}" class="del-basket">&#10006;</button>
-            </footer>
-            </section>
-          `;
+                  return `<section id="${item.name.toLowerCase()}"></section>`;
                 })
                 .join('')
             : ' '
@@ -95,6 +48,9 @@ export default class List extends Component {
       });
       this.listenerAttached = true;
     }
+    store.state.items.map((item, itemIndex) => {
+      new ListItem(item, itemIndex).render();
+    });
     this.basketListener();
     store.dispatch('saveLocalState', {});
   }
